@@ -53,9 +53,21 @@ data("Journals")
 
 # 資料處理：產生新變數 dplyr::mutate
 
+```{r}
+#if follow usage
+mutate (Journals, citeprice=price/citations) -> journals
+summary(journals)
+#pipe expression
+Journals %>% 
+  mutate(
+    citeprice=price/citations
+    ) -> journals
+```
+
+
 ```{r ch2-summary, results='hide'}
-
-
+Journals %>% mutate(citeprice=price/citations) -> journals
+summary(journals)
 ```
 
 # 因果問句
